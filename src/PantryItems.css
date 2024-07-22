@@ -1,0 +1,71 @@
+/* PantryItems.css */
+
+.pantry-items {
+  padding: 20px;
+}
+
+.ingredients-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ingredient-item {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ingredient-item.in-pantry {
+  background-color: green;
+  color: white;
+}
+
+.ingredient-item.ingredient-grid {
+  background-color: red;
+  color: white;
+}
+
+.pantry-panel {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.pantry-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pantry-item {
+  position: relative;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border-radius: 4px;
+}
+
+.pantry-item .delete-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.search-input {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.language-switcher {
+  margin-top: 20px;
+}

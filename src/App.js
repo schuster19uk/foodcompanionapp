@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
+import Navbar from './Navbar';
+import Signup from './Signup';
+import Login from './Login';
+import Home from './Home';
+import PantryItems from './PantryItems';
+import MealPlanner from './MealPlanner';
+import FavouriteRecipes from './FavouriteRecipes';
+import ShoppingList from './ShoppingList';
+import './i18n'; // Import i18n configuration
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <DndProvider backend={HTML5Backend}>
+        <div className="App">
+          <Navbar />
+          <Routes>
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/pantry-items" element={<PantryItems />} />
+            <Route path="/meal-planner" element={<MealPlanner />} />
+            <Route path="/favourite-recipes" element={<FavouriteRecipes />} />
+            <Route path="/shopping-list" element={<ShoppingList />} />
+          </Routes>
+        </div>
+      </DndProvider>
+    </Router>
   );
 }
 
